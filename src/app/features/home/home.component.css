@@ -1,0 +1,19 @@
+.item {
+    background-image: linear-gradient(to right, rgba(34, 197, 94, 0.9), rgba(74, 222, 128, 0.5)), url(/images/image-home.png);
+    background-position: center;
+    background-size: cover;
+}
+
+swiper-container {
+    /* Bullet default */
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: 0.5;
+    --swiper-pagination-bullet-opacity: 1;
+
+    /* Bullet active */
+    --swiper-pagination-color: #fff;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-border-radius: 6px;
+}

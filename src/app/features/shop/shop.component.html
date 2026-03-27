@@ -1,0 +1,63 @@
+<section class="min-h-screen bg-gray-50/50">
+
+    <!-- Hero Header -->
+    <section>
+        <div class="bg-linear-to-br from-primary-600 via-primary-500 to-primary-400 text-white">
+            <div class="container mx-auto px-4 py-10 sm:py-14">
+
+                <!-- Breadcrumb -->
+                <nav class="flex items-center gap-2 text-sm text-white/70 mb-6 flex-wrap">
+                    <a class="hover:text-white transition-colors cursor-pointer" routerLink="/home">Home</a>
+                    <span class="text-white/40">/</span>
+                    <span class="text-white font-medium">All Products</span>
+                </nav>
+
+                <!-- Title -->
+                <div class="flex items-center gap-5">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl ring-1 ring-white/30">
+                        <i class="fas fa-box-open text-3xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">All Products</h1>
+                        <p class="text-white/80 mt-1">Explore our complete product collection</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- section all Products -->
+    <section>
+
+        <div class="container mx-auto px-4 py-8">
+
+            <!-- title -->
+            <div class="mb-6 text-sm text-gray-500">Showing {{limitProducts()}} products</div>
+
+            @if(isloading()){
+            <div class="flex items-center justify-center py-20">
+                <div class="flex flex-col items-center justify-center">
+                    <svg data-prefix="fas" data-icon="spinner" width="30" height="25"
+                        class="svg-inline--fa fa-spinner text-4xl text-primary-600 animate-spin mb-4" role="img"
+                        viewBox="0 0 512 512" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M208 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm0 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM48 208a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm368 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM75 369.1A48 48 0 1 1 142.9 437 48 48 0 1 1 75 369.1zM75 75A48 48 0 1 1 142.9 142.9 48 48 0 1 1 75 75zM437 369.1A48 48 0 1 1 369.1 437 48 48 0 1 1 437 369.1z">
+                        </path>
+                    </svg>
+                    <p class="text-gray-500">Loading categories...</p>
+                </div>
+            </div>
+            }@else {
+            <!-- products -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+                @for (prod of productList(); track prod.id) {
+                <app-product-card [data]="prod"></app-product-card>
+                }
+            </div>
+            }
+        </div>
+    </section>
+
+</section>

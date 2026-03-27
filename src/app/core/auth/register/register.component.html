@@ -1,0 +1,314 @@
+<main class="py-10">
+    <div class="container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 p-4">
+        <!-- left side -->
+        <div>
+            <!-- Title & Description -->
+            <h1 class="text-4xl font-bold">Welcome to <span class="text-primary-600">FreshCart</span></h1>
+            <p class="text-xl mt-2 mb-4">Join thousands of happy customers who enjoy fresh groceries delivered right to
+                their doorstep.</p>
+
+            <!-- Features List -->
+            <ul class="*:flex *:items-start *:gap-4 space-y-6 my-8">
+
+                <!-- Feature 1 — Premium Quality -->
+                <li>
+                    <div
+                        class="icon size-12 text-lg bg-primary-200 text-primary-600 rounded-full flex justify-center items-center">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="content">
+                        <h2 class="text-lg font-semibold">Premium Quality</h2>
+                        <p class="text-gray-600">Premium quality products sourced from trusted suppliers.</p>
+                    </div>
+                </li>
+
+                <!-- Feature 2 — Fast Delivery -->
+                <li>
+                    <div
+                        class="icon size-12 text-lg bg-primary-200 text-primary-600 rounded-full flex justify-center items-center">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div class="content">
+                        <h2 class="text-lg font-semibold">Fast Delivery</h2>
+                        <p class="text-gray-600">Same-day delivery available in most areas</p>
+                    </div>
+                </li>
+
+                <!-- Feature 3 — Secure Shopping -->
+                <li>
+                    <div
+                        class="icon size-12 text-lg bg-primary-200 text-primary-600 rounded-full flex justify-center items-center">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div class="content">
+                        <h2 class="text-lg font-semibold">Secure Shopping</h2>
+                        <p class="text-gray-600">Your data and payments are completely secure</p>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- Customer Review Card -->
+            <div class="review bg-white shadow-sm p-4 rounded-md">
+
+                <!-- Author Info -->
+                <div class="author flex items-center gap-4 mb-4">
+                    <img alt="Sarah Johnson" loading="lazy" width="512" height="512" class="size-12 rounded-full"
+                        src="/images/person.png">
+                    <div>
+                        <h3>Sarah Johnson</h3>
+                        <!-- Star Rating -->
+                        <div class="rating flex gap-0.5 text-yellow-300">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Text -->
+                <blockquote>
+                    <p class="italic text-gray-600">"FreshCart has transformed my shopping experience. The quality of
+                        the products is outstanding, and the delivery is always on time. Highly recommend!"</p>
+                </blockquote>
+
+            </div>
+        </div>
+
+        <!-- right side  -->
+        <div class="bg-white rounded-2xl shadow-lg px-6 py-10">
+
+            <!-- Title & Subtitle -->
+            <h2 class="text-center text-3xl font-semibold mb-2">Create Your Account</h2>
+            <p class="text-center">Start your fresh journey with us today</p>
+
+            <!-- Social Register Buttons -->
+            <div class="register-options flex gap-2 *:grow my-10">
+
+                <!-- Google Button -->
+                <button type="button"
+                    class="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Sign up with Google">
+                    <i class="fab fa-google me-2 text-red-600"></i>
+                    <span>Google</span>
+                </button>
+
+                <!-- Facebook Button -->
+                <button type="button"
+                    class="btn bg-transparent border border-gray-300 hover:bg-gray-100 flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Sign up with Facebook">
+                    <i class="fab fa-facebook me-2 text-blue-600"></i>
+                    <span>Facebook</span>
+                </button>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="divider relative w-full h-0.5 bg-gray-300/30 my-4 flex items-center before:content-['or'] before:absolute before:top-1/2 before:left-1/2 before:-translate-1/2 before:bg-white before:px-4"
+                aria-hidden="true">
+                <span class="sr-only">or</span>
+            </div>
+
+            <!-- Register Form -->
+            <form [formGroup]="registerForm" (ngSubmit)="signUp()" class="space-y-7">
+                @let name = registerForm.get('name');
+                <!-- Name Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="name">Name*</label>
+                    <input id="name" class="form-control" placeholder="Ali" aria-invalid="false" type="text"
+                        formControlName="name" name="name">
+                    @if (name?.errors && name?.touched ) {
+                    <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                        role="alert">
+                        <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these requirements are met:</span>
+                            <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                @if (name?.getError('required')) {
+                                <li>Name is required </li>
+                                }@else if (name?.getError('minlength')) {
+                                <li>At least 3 character</li>
+                                }@else if (name?.getError('maxlength')) {
+                                <li>Up to 20 character only</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                </div>
+                @let email = registerForm.get('email');
+                <!-- Email Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="email">Email*</label>
+                    <input id="email" class="form-control" placeholder="ali@example.com" autocomplete="email"
+                        formControlName="email" type="email" name="email">
+
+                    @if (email?.errors && email?.touched ) {
+                    <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                        role="alert">
+                        <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these requirements are met:</span>
+                            <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                @if (email?.getError('required')) {
+                                <li>Email is required </li>
+                                }@else if (email?.getError('email')) {
+                                <li>must be valid email (ex: UserEmail.gmail.com)</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                @let password = registerForm.get('password');
+                <!-- Password Field -->
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2">
+                        <label for="password">Password*</label>
+                        <input id="password" class="form-control" placeholder="create a strong password"
+                            formControlName="password" autocomplete="new-password" type="password" name="password">
+
+                        <p class="text-gray-500  text-xs">
+                            Must be at least 8 characters with numbers and symbols
+                        </p>
+                        @if (password?.errors && password?.touched ) {
+                        <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                            role="alert">
+                            <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="sr-only">Danger</span>
+                            <div>
+                                <span class="font-medium">Ensure that these requirements are met:</span>
+                                <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                    @if (password?.getError('required')) {
+                                    <li>Password is required </li>
+                                    }@else if (password?.getError('pattern')) {
+                                    <li>At least 1 uppercase letter (A-Z)</li>
+                                    <li>At least 1 lowercase letter (a-z)</li>
+                                    <li>At least 1 number (0-9)</li>
+                                    <li>At least 1 special character (@, #, $, etc)</li>
+                                    <li>Minimum 8 characters</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        }
+                    </div>
+
+                </div>
+                @let rePassword = registerForm.get('rePassword');
+                <!-- Confirm Password Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="rePassword">Confirm Password*</label>
+                    <input id="rePassword" class="form-control" placeholder="confirm your password"
+                        formControlName="rePassword" autocomplete="new-password" type="password" name="rePassword">
+
+                    @if (registerForm.getError('mismatch') && rePassword?.touched ) {
+                    <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                        role="alert">
+                        <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these requirements are met:</span>
+                            <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                @if (rePassword?.getError('required')) {
+                                <li>rePassword is required </li>
+                                }@else if (registerForm.getError('mismatch')) {
+                                <li>Re-Password and password must match </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                @let phone = registerForm.get('phone');
+                <!-- Phone Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="phone">Phone Number*</label>
+                    <input id="phone" class="form-control" placeholder="+1 234 567 8900" autocomplete="tel"
+                        formControlName="phone" type="tel" name="phone">
+                    @if (phone?.errors && phone?.touched ) {
+                    <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                        role="alert">
+                        <svg class="w-4 h-4 me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these requirements are met:</span>
+                            <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                                @if (phone?.getError('required')) {
+                                <li>Phone is required </li>
+                                }@else if (phone?.getError('pattern')) {
+                                <li>must be egyption phone number </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <!-- Terms & Privacy Checkbox -->
+                <div>
+                    <div class="flex items-center gap-2">
+                        <input id="terms" class="size-4 accent-primary-600" type="checkbox" name="terms">
+                        <label for="terms" class="ms-2">
+                            I agree to the
+                            <a class="text-primary-600 hover:underline cursor-pointer" routerLink="/terms-service">
+                                Terms of Service
+                            </a>
+                            and
+                            <a class="text-primary-600 hover:underline cursor-pointer"
+                                routerLink="/privacy-policy">Privacy Policy</a>
+                            *
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" [disabled]="registerForm.invalid || isLoading() "
+                    class="btn bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed w-full transition-colors"
+                    aria-busy="false">
+                    @if (isLoading()) {
+                    <i class="fa-solid fa-spinner fa-spin-pulse me-2"></i>
+                    }@else {
+                    <i class="fas fa-user-plus me-2"></i>
+                    }
+                    <span>Create My Account</span>
+                </button>
+
+            </form>
+
+            <!-- Sign In Link -->
+            <p class="border-t pt-10 border-gray-300/30 my-4 text-center">
+                Already have an account?
+                <a class="text-primary-600 hover:underline font-medium cursor-pointer" routerLink="/login">Sign In</a>
+            </p>
+
+        </div>
+    </div>
+</main>

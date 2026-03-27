@@ -1,0 +1,445 @@
+<!-- section slider -->
+<div class="relative">
+    <swiper-container #swiperRef class="mySwiper h-100" [pagination]="{clickable : true,dynamicBullets : true,}"
+        loop="true" keyboard="true" mousewheel="true">
+        <!-- Slide 1 -->
+        <swiper-slide data-swiper-slide-index="0">
+            <div class="overlay py-20 text-white p-4 w-full h-full item">
+                <!-- one slide  -->
+                <div class="container mx-auto h-full content-center p-6 ">
+                    <h2 class="text-white text-3xl font-bold mb-4 max-w-96 transition-all duration-700 animate__animated  animate__fadeInUp"
+                        [class.opacity-0]="!show()" [class.opacity-100]="show()" [class.translate-y-2]="!show()"
+                        [class.translate-y-0]="show()">
+                        Fresh Products Delivered to your Door
+                    </h2>
+                    <p class="transition-all duration-700 delay-200 animate__animated   animate__fadeInUp"
+                        [class.opacity-0]="!show()" [class.opacity-100]="show()" [class.translate-y-2]="!show()"
+                        [class.translate-y-0]="show()">Get
+                        20% off your first order</p>
+                    <div class="mt-4 transition-all duration-700 delay-500 animate__animated  animate__fadeInUp"
+                        [class.opacity-0]="!show()" [class.opacity-100]="show()" [class.translate-y-2]="!show()"
+                        [class.translate-y-0]="show()">
+                        <!-- routeLinke to All Products -->
+                        <a routerLink="/shop"
+                            class="btn bg-white border-2 border-white/50 text-green-500 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            Shop Now
+                        </a>
+                        <a routerLink="/not-found"
+                            class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            View Deals
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </swiper-slide>
+        <!-- Slide 2 -->
+        <swiper-slide data-swiper-slide-index="1">
+            <div class="overlay py-20 text-white p-4 w-full h-full item">
+                <!-- one slide  -->
+                <div class="container mx-auto h-full content-center p-6 ">
+                    <h2 class="text-white text-3xl font-bold mb-4 max-w-96 transition-all duration-700"
+                        [class.opacity-0]="!show()" [class.opacity-100]="show()" [class.translate-y-2]="!show()"
+                        [class.translate-y-0]="show()">
+                        Premium Quality Guaranteed
+                    </h2>
+                    <p class="transition-all duration-700 delay-200" [class.opacity-0]="!show()"
+                        [class.opacity-100]="show()" [class.translate-y-2]="!show()" [class.translate-y-0]="show()">Get
+                        Fresh from farm to your table
+                    </p>
+                    <div class="mt-4 transition-all duration-700 delay-500" [class.opacity-0]="!show()"
+                        [class.opacity-100]="show()" [class.translate-y-2]="!show()" [class.translate-y-0]="show()">
+                        <!-- routeLinke to All Products -->
+                        <a routerLink=""
+                            class="btn bg-white border-2 border-white/50 text-blue-500 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            Shop Now
+                        </a>
+                        <a
+                            class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </swiper-slide>
+        <!-- Slide 3 -->
+        <swiper-slide data-swiper-slide-index="2">
+            <div class="overlay py-20 text-white p-4 w-full h-full item">
+                <!-- one slide  -->
+                <div class="container mx-auto h-full content-center p-6 ">
+                    <h2 class="text-white text-3xl font-bold mb-4 max-w-96 transition-all duration-700"
+                        [class.opacity-0]="!show()" [class.opacity-100]="show()" [class.translate-y-2]="!show()"
+                        [class.translate-y-0]="show()">
+                        Fast & Free Delivery
+                    </h2>
+                    <p class="transition-all duration-700 delay-200" [class.opacity-0]="!show()"
+                        [class.opacity-100]="show()" [class.translate-y-2]="!show()" [class.translate-y-0]="show()">Get
+                        Same day delivery available
+                    </p>
+                    <div class="mt-4 transition-all duration-700 delay-500" [class.opacity-0]="!show()"
+                        [class.opacity-100]="show()" [class.translate-y-2]="!show()" [class.translate-y-0]="show()">
+                        <!-- routeLinke to All Products -->
+                        <a routerLink=""
+                            class="btn bg-white border-2 border-white/50 text-purple-500 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            Order Now
+                        </a>
+                        <a
+                            class="btn bg-transparent border-2 border-white/50 text-white ml-2 inline-block px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform cursor-pointer">
+                            Delivery Info
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </swiper-slide>
+    </swiper-container>
+    <!-- Prev -->
+    <div (click)="prevSlide()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/90 hover:bg-white text-green-500 hover:text-green-600 rounded-full w-12 h-12 hidden md:flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+        <svg data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left text-lg" role="img"
+            width="23" height="18" viewBox="0 0 320 512" aria-hidden="true">
+            <path fill="currentColor"
+                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- Next -->
+    <div (click)="nextSlide()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/90 hover:bg-white text-green-500 hover:text-green-600 rounded-full w-12 h-12 hidden md:flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+        <svg data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right text-lg" role="img"
+            width="23" height="18" viewBox="0 0 320 512" aria-hidden="true">
+            <path fill="currentColor"
+                d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+            </path>
+        </svg>
+    </div>
+</div>
+
+<!-- section two -->
+<section class="py-8 bg-gray-50">
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div
+                class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300  animate__animated  animate__fadeInUp  ">
+                <div class="bg-blue-50 text-blue-500 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                    <svg data-prefix="fas" data-icon="truck" class="svg-inline--fa fa-truck text-xl" role="img"
+                        viewBox="0 0 576 512" aria-hidden="true" width="25" height="20">
+                        <path fill="currentColor"
+                            d="M0 96C0 60.7 28.7 32 64 32l288 0c35.3 0 64 28.7 64 64l0 32 50.7 0c17 0 33.3 6.7 45.3 18.7L557.3 192c12 12 18.7 28.3 18.7 45.3L576 384c0 35.3-28.7 64-64 64l-3.3 0c-10.4 36.9-44.4 64-84.7 64s-74.2-27.1-84.7-64l-102.6 0c-10.4 36.9-44.4 64-84.7 64s-74.2-27.1-84.7-64L64 448c-35.3 0-64-28.7-64-64L0 96zM512 288l0-50.7-45.3-45.3-50.7 0 0 96 96 0zM192 424a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm232 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Free Shipping</h3>
+                    <p class="text-xs text-gray-500">On orders over 500 EGP</p>
+                </div>
+            </div>
+            <div
+                class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300  animate__animated  animate__fadeInUp ">
+                <div
+                    class="bg-emerald-50 text-emerald-500 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                    <svg data-prefix="fas" data-icon="shield-halved" class="svg-inline--fa fa-shield-halved text-xl"
+                        role="img" viewBox="0 0 512 512" aria-hidden="true" width="25" height="20">
+                        <path fill="currentColor"
+                            d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0zm0 66.8l0 378.1c138-66.8 175.1-214.8 176-303.4l-176-74.6 0 0z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Secure Payment</h3>
+                    <p class="text-xs text-gray-500">100% secure transactions</p>
+                </div>
+            </div>
+            <div
+                class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300  animate__animated  animate__fadeInUp ">
+                <div
+                    class="bg-orange-50 text-orange-500 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                    <svg data-prefix="fas" data-icon="arrow-rotate-left"
+                        class="svg-inline--fa fa-arrow-rotate-left text-xl" role="img" viewBox="0 0 512 512" width="25"
+                        height="20" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M256 64c-56.8 0-107.9 24.7-143.1 64l47.1 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 192c-17.7 0-32-14.3-32-32L0 32C0 14.3 14.3 0 32 0S64 14.3 64 32l0 54.7C110.9 33.6 179.5 0 256 0 397.4 0 512 114.6 512 256S397.4 512 256 512c-87 0-163.9-43.4-210.1-109.7-10.1-14.5-6.6-34.4 7.9-44.6s34.4-6.6 44.6 7.9c34.8 49.8 92.4 82.3 157.6 82.3 106 0 192-86 192-192S362 64 256 64z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 text-sm">Easy Returns</h3>
+                    <p class="text-xs text-gray-500">14-day return policy</p>
+                </div>
+            </div>
+            <div
+                class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300  animate__animated  animate__fadeInUp ">
+                <div
+                    class="bg-purple-50 text-purple-500 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                    <svg data-prefix="fas" data-icon="headset" class="svg-inline--fa fa-headset text-xl" role="img"
+                        width="25" height="20" viewBox="0 0 448 512" aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M224 64c-79 0-144.7 57.3-157.7 132.7 9.3-3 19.3-4.7 29.7-4.7l16 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0c-53 0-96-43-96-96l0-64C0 100.3 100.3 0 224 0S448 100.3 448 224l0 168.1c0 66.3-53.8 120-120.1 120l-87.9-.1-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 0 40 0c39.8 0 72-32.2 72-72l0-20.9c-14.1 8.2-30.5 12.8-48 12.8l-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48l16 0c10.4 0 20.3 1.6 29.7 4.7-13-75.3-78.6-132.7-157.7-132.7z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 text-sm">24/7 Support</h3>
+                    <p class="text-xs text-gray-500">Dedicated support team</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- section Shop By Category -->
+<section class="py-10">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-8">
+            <div class="flex  items-center gap-3 my-8">
+                <div class="h-8 w-1.5 bg-linear-to-b from-emerald-500 to-emerald-700 rounded-full"></div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+                    Shop By
+                    <span class="text-emerald-600">
+                        Category
+                    </span>
+                </h2>
+            </div>
+            <!-- routerLinke to all-category -->
+            <a routerLink="/all-categories"
+                class="text-primary-600 self-end sm:self-auto hover:text-primary-700 font-medium flex items-center cursor-pointer">
+                View All Categories
+                <svg data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right ml-2" role="img"
+                    viewBox="0 0 512 512" aria-hidden="true" width="20" height="16">
+                    <path fill="currentColor"
+                        d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            @for (item of categorieList(); track item._id) {
+            <app-categories [item]="item"></app-categories>
+            }
+        </div>
+    </div>
+</section>
+
+
+<!-- section New Arrivals and Deal of the Day -->
+<section class="py-10">
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- card left -->
+            <div
+                class="relative overflow-hidden rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-700 p-8 text-white animate__animated animate__slideInLeft">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2">
+                </div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm mb-4">
+                        <span>🔥</span>
+                        <span>Deal of the Day</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Fresh Organic Fruits</h3>
+                    <p class="text-white/80 mb-4">Get up to 40% off on selected organic fruits</p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="text-3xl font-bold">40% OFF</div>
+                        <div class="text-sm text-white/70">
+                            Use code: <span class="font-bold text-white">ORGANIC40</span>
+                        </div>
+                    </div>
+                    <!-- routerLinke to All Prodects -->
+                    <a
+                        class="inline-flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+                        Shop Now
+                        <svg data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right" role="img"
+                            width="20" height="16" viewBox="0 0 512 512" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- card right -->
+            <div
+                class="relative overflow-hidden rounded-2xl bg-linear-to-br from-orange-400 to-rose-500 p-8 text-white animate__animated animate__slideInRight">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2">
+                </div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full text-sm mb-4">
+                        <span>✨</span>
+                        <span>New Arrivals</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Exotic Vegetables</h3>
+                    <p class="text-white/80 mb-4">Discover our latest collection of premium vegetables</p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="text-3xl font-bold">25% OFF</div>
+                        <div class="text-sm text-white/70">
+                            Use code: <span class="font-bold text-white">FRESH25</span>
+                        </div>
+                    </div>
+                    <!-- routerLike All Products -->
+                    <a
+                        class="inline-flex items-center gap-2 bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+                        Explore Now
+                        <svg data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right" role="img"
+                            width="20" height="16" viewBox="0 0 512 512" aria-hidden="true">
+                            <path fill="currentColor"
+                                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- section Featured Products -->
+<section>
+    <div class="container mx-auto">
+        <!-- title -->
+        <div class="flex items-center gap-3 my-8">
+            <div class="h-8 w-1.5 bg-linear-to-b from-emerald-500 to-emerald-700 rounded-full"></div>
+            <h2 class="text-3xl font-bold text-gray-800">Featured <span class="text-emerald-600">Products</span></h2>
+        </div>
+
+        <!-- products -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            @for (prod of productList(); track prod._id) {
+            <app-product-card [data]="prod" [wishList]="wishList()"></app-product-card>
+            }
+        </div>
+    </div>
+</section>
+
+
+<!-- section Newsletter -->
+<section class="py-16 bg-linear-to-b from-white to-gray-50">
+    <div class="container mx-auto">
+        <div class="relative">
+            <div
+                class="bg-linear-to-br from-emerald-50 via-white to-teal-50 rounded-[2.5rem] border border-emerald-100/50 shadow-2xl shadow-emerald-500/10 overflow-hidden animate__animated animate__slideInUp">
+                <div
+                    class="absolute top-0 right-0 w-80 h-80 bg-linear-to-br from-emerald-200/40 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-linear-to-tr from-teal-200/30 to-transparent rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none">
+                </div>
+                <div class="relative grid lg:grid-cols-5 gap-8 p-8 lg:p-14">
+                    <div class="lg:col-span-3 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-linear-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">Newsletter
+                                </h3>
+                                <p class="text-xs text-gray-500">50,000+ subscribers</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">Get the Freshest
+                                Updates
+                                <span class="text-emerald-600"> Delivered Free</span>
+                            </h2>
+                            <p class="text-gray-500 mt-3 text-lg">Weekly recipes, seasonal offers & exclusive member
+                                perks.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div
+                                class="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-emerald-100 px-4 py-2.5 rounded-full shadow-sm">
+                                <div class="w-7 h-7 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-leaf text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm font-medium text-gray-700">Fresh Picks Weekly</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-emerald-100 px-4 py-2.5 rounded-full shadow-sm">
+                                <div class="w-7 h-7 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-truck text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm font-medium text-gray-700">Free Delivery Codes</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm border border-emerald-100 px-4 py-2.5 rounded-full shadow-sm">
+                                <div class="w-7 h-7 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-tag text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-sm font-medium text-gray-700">Members-Only Deals</span>
+                            </div>
+                        </div>
+                        <form class="pt-2">
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <div class="relative flex-1">
+                                    <input placeholder="you@example.com"
+                                        class="w-full pl-5 pr-5 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all text-base shadow-sm"
+                                        required type="email">
+                                </div>
+                                <button type="submit"
+                                    class="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-semibold text-base transition-all duration-300 shadow-lg bg-linear-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white shadow-emerald-500/30 hover:shadow-emerald-500/40 hover:scale-[1.02] cursor-pointer">
+                                    <span>Subscribe</span>
+                                    <i
+                                        class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-3 pl-1">✨ Unsubscribe anytime. No spam, ever.</p>
+                        </form>
+                    </div>
+                    <div class="lg:col-span-2 lg:border-l lg:border-emerald-100 lg:pl-8">
+                        <div class="h-full flex flex-col justify-center">
+                            <div
+                                class="bg-linear-to-br from-gray-900 to-gray-800 rounded-3xl p-8 text-white relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl">
+                                </div>
+                                <div class="absolute bottom-0 left-0 w-24 h-24 bg-teal-500/20 rounded-full blur-2xl">
+                                </div>
+                                <div class="relative space-y-5">
+                                    <div
+                                        class="inline-block bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-500/30">
+                                        📱 MOBILE APP
+                                    </div>
+                                    <h3 class="text-2xl font-bold leading-tight">Shop Faster on Our App</h3>
+                                    <p class="text-gray-400 text-sm leading-relaxed">
+                                        Get app-exclusive deals & 15% off your first order.
+                                    </p>
+                                    <div class="flex flex-col gap-3 pt-2">
+                                        <a href="#"
+                                            class="flex items-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/10 px-4 py-3 rounded-xl transition-all hover:scale-[1.02]">
+                                            <i class="fab fa-apple text-xl"></i>
+                                            <div class="text-left">
+                                                <div class="text-2xs text-gray-400 uppercase tracking-wide">Download
+                                                    on</div>
+                                                <div class="text-sm font-semibold -mt-0.5">App Store</div>
+                                            </div>
+                                        </a>
+                                        <a href="#"
+                                            class="flex items-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/10 px-4 py-3 rounded-xl transition-all hover:scale-[1.02]">
+                                            <i class="fab fa-google-play text-xl"></i>
+                                            <div class="text-left">
+                                                <div class="text-2xs text-gray-400 uppercase tracking-wide">Get it on
+                                                </div>
+                                                <div class="text-sm font-semibold -mt-0.5">Google Play</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="flex items-center gap-2 pt-2 text-sm">
+                                        <span class="text-yellow-400">★★★★★</span>
+                                        <span class="text-gray-400">4.9 • 100K+ downloads</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,99 @@
+<div
+    class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:-translate-y-1.25 hover:shadow-lg transition duration-500">
+    <div class="relative">
+        <img class="w-full h-60 object-contain bg-white" [alt]="data().slug" [src]="data().imageCover">
+
+        @if (data().priceAfterDiscount) {
+        <div class="absolute top-3 left-3">
+            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded">
+                -{{ discountPercent() }}%
+            </span>
+        </div>
+        }
+
+        <div class="absolute top-3 right-3 flex flex-col space-y-2">
+
+            <!-- Wishlist -->
+            <button (click)="addProductToWishList(data()._id)"
+                class="bg-white h-8 w-8 rounded-full flex items-center justify-center transition shadow-sm text-gray-600 hover:text-red-500 cursor-pointer"
+                title="Add to wishlist" tabindex="0">
+                @if (isLoadingWishList()) {
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                }@else {
+                @if (isInWishlist(data()._id)) {
+                <i class="fa-solid fa-heart text-sm text-red-600"></i>
+                }@else {
+                <i class="far fa-heart text-sm"></i>
+                }
+                }
+            </button>
+
+            <!-- Compare -->
+            <button
+                class="bg-white h-8 w-8 rounded-full flex items-center justify-center text-gray-600 hover:text-primary-600 shadow-sm cursor-pointer">
+                <i class="fas fa-arrows-rotate text-xs"></i>
+            </button>
+
+            <!-- View -->
+            <a class="bg-white h-8 w-8 rounded-full flex items-center justify-center text-gray-600 hover:text-primary-600 shadow-sm cursor-pointer"
+                [routerLink]="['/product-details' , data()._id]">
+                <i class="far fa-eye text-sm"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="p-4">
+        <div class="text-xs text-gray-500 mb-1">{{data().category.name}}</div>
+        <h3 class="font-medium mb-1 cursor-pointer " title="Woman Shawl">
+            <a class="line-clamp-2 cursor-pointer">
+                {{data().title}}
+            </a>
+        </h3>
+
+        <!-- Rating -->
+        <div class="flex items-center mb-2">
+            <div class="flex text-amber-400 mr-2">
+                <div class="text-yellow-400">
+                    @for (star of stars(); track $index) {
+
+                    @if (star === 'full') {
+                    <i class="fas fa-star"></i>
+                    }
+
+                    @else if (star === 'half') {
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                    }
+
+                    @else {
+                    <i class="far fa-star"></i>
+                    }
+
+                    }
+                </div>
+            </div>
+            <span class="text-xs text-gray-500">{{data().ratingsAverage}} ({{data().ratingsQuantity}})</span>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <div>
+                @if (data().priceAfterDiscount) {
+                <span class="text-lg font-bold text-primary-600">{{data().priceAfterDiscount}} EGP</span>
+                <span class="text-sm text-gray-500 line-through ml-2">{{data().price}}</span>
+                }@else{
+                <span class="text-lg font-bold text-gray-800">{{data().price}} EGP </span>
+                }
+            </div>
+
+            <!-- Add -->
+            <button (click)="addProductToCart(data()._id)"
+                class="h-10 w-10 rounded-full flex items-center justify-center transition bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-70 cursor-pointer"
+                [disabled]="isLoadingCart()">
+                @if (!isLoadingCart()) {
+                <i class="fas fa-plus"></i>
+                }@else {
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                }
+            </button>
+        </div>
+    </div>
+</div>
