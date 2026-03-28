@@ -311,8 +311,6 @@ https://ecommerce.routemisr.com
 
 ---
 
-## 📸 Screenshots
-
 > **Note:** Add actual screenshots of your application here
 
 ### Home Page
