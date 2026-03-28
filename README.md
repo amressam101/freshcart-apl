@@ -311,44 +311,6 @@ https://ecommerce.routemisr.com
 
 ---
 
-> **Note:** Add actual screenshots of your application here
-
-### Home Page
-
-![Home Page](./screenshots/home.png)
-_Featured products and categories showcase_
-
-### Product Listing
-
-![Products](./screenshots/products.png)
-_Browse products with filters_
-
-### Product Details
-
-![Product Details](./screenshots/product-details.png)
-_Detailed product information with image gallery_
-
-### Shopping Cart
-
-![Cart](./screenshots/cart.png)
-_Manage cart items and quantities_
-
-### Checkout
-
-![Checkout](./screenshots/checkout.png)
-_Secure checkout process_
-
-### Wishlist
-
-![Wishlist](./screenshots/wishlist.png)
-_Saved favorite products_
-
-### User Profile
-
-![Profile](./screenshots/profile.png)
-_Manage account and view orders_
-
----
 
 ## 🌐 Live Demo
 
