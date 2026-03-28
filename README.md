@@ -1,59 +1,102 @@
-# ECommerce
+# E-Commerce Web App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+A modern and responsive e-commerce web application built using Angular. The application allows users to browse products, manage their shopping cart, and complete orders with a smooth and dynamic user experience.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+
+- User Authentication (Login / Register / Forgot Password)
+- Route protection using Angular Guards
+- HTTP request handling using Interceptors
+- Integration with RESTful APIs
+- Add, update, and remove items from Cart & Wishlist
+- Product filtering by category and brand
+- Manage user addresses and view orders
+- Responsive UI with modern design
+- Alert messages using SweetAlert
+
+---
+
+## 🛠️ Tech Stack
+
+- Angular version(21.2.1)
+- TypeScript
+- Tailwind CSS
+- SweetAlert2
+- Font Awesome
+- Flowbite
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/amressam101/freshcart-apl.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the project:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+4. Open your browser at:
 
 ```bash
-ng generate component component-name
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📂 Folder Structure
 
-```bash
-ng generate --help
-```
+src/
+├── app/
+│ ├── core/
+│ │ ├── auth/ # authentication (login, register, forgot password)
+│ │ ├── guards/ # route protection
+│ │ ├── interceptors/ # HTTP interceptors (headers, loading, unauthorized)
+│ │ ├── models/ # data models
+│ │ └── service/ # API services
+│
+│ ├── features/ # main application pages
+│ │ ├── home/
+│ │ ├── products/
+│ │ ├── product-details/
+│ │ ├── cart/
+│ │ ├── checkout/
+│ │ ├── brands/
+│ │ ├── categories/
+│ │ ├── wishlist/
+│ │ └── ...
+│
+│ ├── shared/
+│ │ ├── components/ # reusable UI components
+│ │ ├── directives/ # custom directives
+│ │ └── pipes/ # custom pipes
+│
+│ ├── environments/ # environment configs
+│ ├── app.routes.ts
+│ ├── app.config.ts
+│ └── app.component.ts
+│
+├── assets/ # static files (images, fonts)
+├── index.html
+└── styles.css
 
-## Building
+## 🧠 Architecture & Advanced Concepts :
 
-To build the project run:
+- Used HTTP Interceptors for handling requests and global error handling
+- Applied modular architecture using Core, Shared, and Feature modules
+- Separation of concerns for better scalability and maintainability
 
-```bash
-ng build
-```
+## 🌐 Live Demo :
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://freshcart-apl.netlify.app
