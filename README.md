@@ -7,7 +7,7 @@ A modern and responsive e-commerce web application built using Angular. The appl
 ## 🚀 Features
 
 - User Authentication (Login / Register / Forgot Password)
-- Route protection using Angular Guards
+- Route protection using Angular Guards to prevent unauthorized access
 - HTTP request handling using Interceptors
 - Integration with RESTful APIs
 - Add, update, and remove items from Cart & Wishlist
@@ -57,46 +57,49 @@ http://localhost:4200/
 
 ## 📂 Folder Structure
 
+```bash
 src/
 ├── app/
-│ ├── core/
-│ │ ├── auth/ # authentication (login, register, forgot password)
-│ │ ├── guards/ # route protection
-│ │ ├── interceptors/ # HTTP interceptors (headers, loading, unauthorized)
-│ │ ├── models/ # data models
-│ │ └── service/ # API services
+│   ├── core/
+│   │   ├── auth/              # authentication (login, register, forgot password)
+│   │   ├── guards/            # route protection
+│   │   ├── interceptors/      # HTTP interceptors (headers, loading, unauthorized)
+│   │   ├── models/            # data models
+│   │   └── service/           # API services
 │
-│ ├── features/ # main application pages
-│ │ ├── home/
-│ │ ├── products/
-│ │ ├── product-details/
-│ │ ├── cart/
-│ │ ├── checkout/
-│ │ ├── brands/
-│ │ ├── categories/
-│ │ ├── wishlist/
-│ │ └── ...
+│   ├── features/              # main application pages
+│   │   ├── home/
+│   │   ├── products/
+│   │   ├── product-details/
+│   │   ├── cart/
+│   │   ├── checkout/
+│   │   ├── brands/
+│   │   ├── categories/
+│   │   ├── wishlist/
+│   │   └── ...
 │
-│ ├── shared/
-│ │ ├── components/ # reusable UI components
-│ │ ├── directives/ # custom directives
-│ │ └── pipes/ # custom pipes
+│   ├── shared/
+│   │   ├── components/        # reusable UI components
+│   │   ├── directives/        # custom directives
+│   │   └── pipes/             # custom pipes
 │
-│ ├── environments/ # environment configs
-│ ├── app.routes.ts
-│ ├── app.config.ts
-│ └── app.component.ts
+│   ├── environments/          # environment configs
+│   ├── app.routes.ts
+│   ├── app.config.ts
+│   └── app.component.ts
 │
-├── assets/ # static files (images, fonts)
+├── assets/                    # static files (images, fonts)
 ├── index.html
 └── styles.css
+```
 
 ## 🧠 Architecture & Advanced Concepts :
 
+- Implemented route protection using Angular Guards
 - Used HTTP Interceptors for handling requests and global error handling
 - Applied modular architecture using Core, Shared, and Feature modules
 - Separation of concerns for better scalability and maintainability
 
 ## 🌐 Live Demo :
 
-https://freshcart-apl.netlify.app
+👉 https://freshcart-apl.netlify.app
